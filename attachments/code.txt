@@ -1,0 +1,1850 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push(["object" == typeof document ? document.currentScript : void 0, 475191, e => {
+    "use strict";
+    e.s(["ASTRONAUT_CONFIG", 0, {
+        scale: 1.2,
+        positionY: -2.5,
+        startX: 3,
+        endX: -3,
+        cameraZ: 6,
+        cameraY: .5,
+        fov: 50,
+        initialRotationY: .2 * Math.PI,
+        initialRotationX: .1,
+        rotationMultiplierY: 2 * Math.PI,
+        rotationMultiplierX: .3,
+        floatAmplitude: .1,
+        floatSpeed: .8,
+        ambientIntensity: .6,
+        mainLightIntensity: 1.5,
+        rimLightIntensity: .8
+    }, "ASTRONAUT_MODEL_PATH", 0, "/ca/AstronautModel.glb", "CA_LOGIN_CALLBACK", 0, "/login?callbackUrl=/campus-ambassador"])
+}
+, 272371, e => {
+    "use strict";
+    e.s(["COLORS", 0, {
+        BG_DEEP: "#0a0612",
+        PINK: "#ec4899",
+        PURPLE: "#8b5cf6",
+        CYAN: "#06b6d4",
+        VIOLET: "#9333ea",
+        INDIGO: "#4f46e5",
+        DEEP_PURPLE: "#581c87",
+        SUCCESS: "#22c55e",
+        WARNING: "#eab308",
+        ERROR: "#ef4444",
+        WHITE: "#ffffff"
+    }, "COLORS_RGBA", 0, {
+        PINK_30: "rgba(236, 72, 153, 0.3)",
+        PINK_50: "rgba(236, 72, 153, 0.5)",
+        PURPLE_30: "rgba(139, 92, 246, 0.3)",
+        PURPLE_50: "rgba(139, 92, 246, 0.5)",
+        CYAN_30: "rgba(6, 182, 212, 0.3)"
+    }, "GRADIENTS", 0, {
+        TRI: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%)",
+        TRI_90: "linear-gradient(90deg, #ec4899, #8b5cf6, #06b6d4)",
+        PINK_PURPLE: "linear-gradient(135deg, #ec4899, #8b5cf6)"
+    }])
+}
+, 799303, 552493, e => {
+    "use strict";
+    var t = e.i(951301)
+      , r = e.i(171151)
+      , n = e.i(527962)
+      , o = e.i(732919)
+      , i = e.i(543340)
+      , s = e.i(272371);
+    o.default.registerPlugin(i.ScrollTrigger),
+    e.s(["FloatingElements", 0, function() {
+        let e = (0,
+        n.useRef)(null);
+        return (0,
+        n.useEffect)( () => {
+            let t = o.default.context( () => {
+                o.default.to(".orb-deep", {
+                    y: -300,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 2
+                    }
+                }),
+                o.default.to(".orb-mid", {
+                    y: -180,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 1.2
+                    }
+                }),
+                o.default.to(".orb-near", {
+                    y: -100,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: .8
+                    }
+                }),
+                o.default.to(".morph-shape", {
+                    borderRadius: "60% 40% 70% 30% / 40% 60% 30% 70%",
+                    rotation: 180,
+                    scale: 1.2,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 1.5
+                    }
+                }),
+                o.default.to(".ethereal-ring", {
+                    scale: 2,
+                    opacity: 0,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "50% top",
+                        scrub: !0
+                    }
+                }),
+                o.default.to(".geo-pattern-1", {
+                    rotation: 360,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 4
+                    }
+                }),
+                o.default.to(".geo-pattern-2", {
+                    rotation: -360,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 6
+                    }
+                }),
+                o.default.utils.toArray(".drift-particle").forEach( (e, t) => {
+                    o.default.to(e, {
+                        y: -200 - 50 * t,
+                        x: (t % 2 == 0 ? 1 : -1) * 30,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: "body",
+                            start: "top top",
+                            end: "bottom bottom",
+                            scrub: 1 + .3 * t
+                        }
+                    })
+                }
+                )
+            }
+            , e);
+            return () => t.revert()
+        }
+        , []),
+        (0,
+        t.jsxs)("div", {
+            ref: e,
+            className: "jsx-e5b8981b2768aae5 pointer-events-none fixed inset-0 z-[2] overflow-hidden",
+            children: [(0,
+            t.jsx)("div", {
+                style: {
+                    background: "radial-gradient(circle, rgba(236, 72, 153, 0.7) 0%, rgba(236, 72, 153, 0) 70%)",
+                    animation: "breathe 8s ease-in-out infinite"
+                },
+                className: "jsx-e5b8981b2768aae5 orb-deep absolute top-[5%] left-[8%] h-[400px] w-[400px] rounded-full opacity-20 blur-3xl"
+            }), (0,
+            t.jsx)("div", {
+                style: {
+                    background: "radial-gradient(circle, rgba(6, 182, 212, 0.6) 0%, transparent 70%)",
+                    animation: "breathe 10s ease-in-out infinite 2s"
+                },
+                className: "jsx-e5b8981b2768aae5 orb-deep absolute top-[60%] right-[5%] h-[350px] w-[350px] rounded-full opacity-15 blur-3xl"
+            }), (0,
+            t.jsx)("div", {
+                style: {
+                    background: "radial-gradient(circle, rgba(139, 92, 246, 0.7) 0%, transparent 70%)",
+                    animation: "breathe 7s ease-in-out infinite 1s"
+                },
+                className: "jsx-e5b8981b2768aae5 orb-mid absolute top-[30%] right-[15%] h-[280px] w-[280px] rounded-full opacity-20 blur-2xl"
+            }), (0,
+            t.jsx)("div", {
+                style: {
+                    background: "radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%)",
+                    animation: "breathe 9s ease-in-out infinite 3s"
+                },
+                className: "jsx-e5b8981b2768aae5 orb-mid absolute bottom-[25%] left-[12%] h-[220px] w-[220px] rounded-full opacity-25 blur-2xl"
+            }), (0,
+            t.jsx)("div", {
+                style: {
+                    background: "radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, transparent 70%)",
+                    animation: "breathe 5s ease-in-out infinite"
+                },
+                className: "jsx-e5b8981b2768aae5 orb-near absolute top-[45%] left-[40%] h-[150px] w-[150px] rounded-full opacity-15 blur-xl"
+            }), (0,
+            t.jsx)("div", {
+                style: {
+                    background: "linear-gradient(135deg, rgba(236, 72, 153, 0.4) 0%, rgba(139, 92, 246, 0.4) 100%)",
+                    borderRadius: "30% 70% 50% 50% / 50% 30% 70% 50%",
+                    filter: "blur(1px)"
+                },
+                className: "jsx-e5b8981b2768aae5 morph-shape absolute top-[20%] right-[25%] h-24 w-24 opacity-20"
+            }), (0,
+            t.jsx)("div", {
+                style: {
+                    background: "linear-gradient(135deg, rgba(6, 182, 212, 0.4) 0%, rgba(139, 92, 246, 0.4) 100%)",
+                    borderRadius: "50% 30% 50% 70% / 70% 50% 30% 50%",
+                    filter: "blur(1px)",
+                    animationDelay: "0.5s"
+                },
+                className: "jsx-e5b8981b2768aae5 morph-shape absolute top-[65%] left-[18%] h-16 w-16 opacity-25"
+            }), (0,
+            t.jsxs)("div", {
+                className: "jsx-e5b8981b2768aae5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+                children: [(0,
+                t.jsx)("div", {
+                    style: {
+                        boxShadow: "0 0 40px rgba(236, 72, 153, 0.1)"
+                    },
+                    className: "jsx-e5b8981b2768aae5 ethereal-ring absolute h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-pink-500/20"
+                }), (0,
+                t.jsx)("div", {
+                    style: {
+                        boxShadow: "0 0 60px rgba(139, 92, 246, 0.1)",
+                        animationDelay: "0.3s"
+                    },
+                    className: "jsx-e5b8981b2768aae5 ethereal-ring absolute h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-500/15"
+                })]
+            }), (0,
+            t.jsxs)("svg", {
+                viewBox: "0 0 100 100",
+                className: "jsx-e5b8981b2768aae5 geo-pattern-1 absolute top-[15%] right-[20%] h-32 w-32 opacity-10",
+                children: [(0,
+                t.jsx)("polygon", {
+                    points: "50,5 95,75 5,75",
+                    fill: "none",
+                    stroke: "url(#grad1)",
+                    strokeWidth: "0.5",
+                    className: "jsx-e5b8981b2768aae5"
+                }), (0,
+                t.jsx)("polygon", {
+                    points: "50,95 5,25 95,25",
+                    fill: "none",
+                    stroke: "url(#grad1)",
+                    strokeWidth: "0.5",
+                    className: "jsx-e5b8981b2768aae5"
+                }), (0,
+                t.jsx)("defs", {
+                    className: "jsx-e5b8981b2768aae5",
+                    children: (0,
+                    t.jsxs)("linearGradient", {
+                        id: "grad1",
+                        x1: "0%",
+                        y1: "0%",
+                        x2: "100%",
+                        y2: "100%",
+                        className: "jsx-e5b8981b2768aae5",
+                        children: [(0,
+                        t.jsx)("stop", {
+                            offset: "0%",
+                            stopColor: s.COLORS.PINK,
+                            className: "jsx-e5b8981b2768aae5"
+                        }), (0,
+                        t.jsx)("stop", {
+                            offset: "100%",
+                            stopColor: s.COLORS.PURPLE,
+                            className: "jsx-e5b8981b2768aae5"
+                        })]
+                    })
+                })]
+            }), (0,
+            t.jsxs)("svg", {
+                viewBox: "0 0 100 100",
+                className: "jsx-e5b8981b2768aae5 geo-pattern-2 absolute bottom-[20%] left-[15%] h-40 w-40 opacity-10",
+                children: [(0,
+                t.jsx)("circle", {
+                    cx: "50",
+                    cy: "50",
+                    r: "45",
+                    fill: "none",
+                    stroke: "url(#grad2)",
+                    strokeWidth: "0.5",
+                    className: "jsx-e5b8981b2768aae5"
+                }), (0,
+                t.jsx)("circle", {
+                    cx: "50",
+                    cy: "50",
+                    r: "30",
+                    fill: "none",
+                    stroke: "url(#grad2)",
+                    strokeWidth: "0.5",
+                    className: "jsx-e5b8981b2768aae5"
+                }), (0,
+                t.jsx)("circle", {
+                    cx: "50",
+                    cy: "50",
+                    r: "15",
+                    fill: "none",
+                    stroke: "url(#grad2)",
+                    strokeWidth: "0.5",
+                    className: "jsx-e5b8981b2768aae5"
+                }), (0,
+                t.jsx)("defs", {
+                    className: "jsx-e5b8981b2768aae5",
+                    children: (0,
+                    t.jsxs)("linearGradient", {
+                        id: "grad2",
+                        x1: "0%",
+                        y1: "0%",
+                        x2: "100%",
+                        y2: "100%",
+                        className: "jsx-e5b8981b2768aae5",
+                        children: [(0,
+                        t.jsx)("stop", {
+                            offset: "0%",
+                            stopColor: s.COLORS.CYAN,
+                            className: "jsx-e5b8981b2768aae5"
+                        }), (0,
+                        t.jsx)("stop", {
+                            offset: "100%",
+                            stopColor: s.COLORS.PURPLE,
+                            className: "jsx-e5b8981b2768aae5"
+                        })]
+                    })
+                })]
+            }), [{
+                top: "15%",
+                left: "45%",
+                size: 6,
+                color: "pink"
+            }, {
+                top: "25%",
+                left: "70%",
+                size: 4,
+                color: "purple"
+            }, {
+                top: "40%",
+                left: "20%",
+                size: 5,
+                color: "cyan"
+            }, {
+                top: "55%",
+                left: "55%",
+                size: 3,
+                color: "pink"
+            }, {
+                top: "65%",
+                left: "80%",
+                size: 5,
+                color: "purple"
+            }, {
+                top: "75%",
+                left: "35%",
+                size: 4,
+                color: "cyan"
+            }, {
+                top: "85%",
+                left: "60%",
+                size: 6,
+                color: "pink"
+            }, {
+                top: "10%",
+                left: "85%",
+                size: 3,
+                color: "purple"
+            }].map( (e, r) => (0,
+            t.jsx)("div", {
+                style: {
+                    top: e.top,
+                    left: e.left,
+                    width: e.size,
+                    height: e.size,
+                    background: "pink" === e.color ? s.COLORS.PINK : "purple" === e.color ? s.COLORS.PURPLE : s.COLORS.CYAN,
+                    boxShadow: `0 0 ${3 * e.size}px ${"pink" === e.color ? "rgba(236, 72, 153, 0.8)" : "purple" === e.color ? "rgba(139, 92, 246, 0.8)" : "rgba(6, 182, 212, 0.8)"}`,
+                    animation: `twinkle ${3 + .5 * r}s ease-in-out infinite ${.3 * r}s`
+                },
+                className: "jsx-e5b8981b2768aae5 drift-particle absolute rounded-full"
+            }, r)), (0,
+            t.jsx)("div", {
+                style: {
+                    background: "linear-gradient(180deg, transparent 0%, rgba(236, 72, 153, 0.8) 30%, rgba(139, 92, 246, 0.6) 70%, transparent 100%)",
+                    transform: "rotate(15deg)",
+                    animation: "lightStreak 12s ease-in-out infinite"
+                },
+                className: "jsx-e5b8981b2768aae5 absolute top-0 left-[25%] h-[70%] w-[1px] origin-top opacity-10"
+            }), (0,
+            t.jsx)("div", {
+                style: {
+                    background: "linear-gradient(180deg, transparent 0%, rgba(6, 182, 212, 0.8) 40%, rgba(139, 92, 246, 0.6) 80%, transparent 100%)",
+                    transform: "rotate(-12deg)",
+                    animation: "lightStreak 15s ease-in-out infinite 3s"
+                },
+                className: "jsx-e5b8981b2768aae5 absolute top-[10%] right-[20%] h-[60%] w-[1px] origin-top opacity-10"
+            }), (0,
+            t.jsx)(r.default, {
+                id: "e5b8981b2768aae5",
+                children: "@keyframes breathe{0%,to{opacity:.15;transform:scale(1)}50%{opacity:.25;transform:scale(1.15)}}@keyframes twinkle{0%,to{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.5)}}@keyframes lightStreak{0%,to{opacity:.05}50%{opacity:.15}}"
+            })]
+        })
+    }
+    ], 799303);
+    var a = e.i(635218)
+      , l = e.i(51028);
+    o.default.registerPlugin(i.ScrollTrigger),
+    e.s(["GridBackground", 0, function() {
+        let e = (0,
+        n.useRef)(null);
+        return (0,
+        n.useEffect)( () => {
+            let t = o.default.context( () => {
+                o.default.to(".nebula-layer-1", {
+                    y: -150,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 1.5
+                    }
+                }),
+                o.default.to(".nebula-layer-2", {
+                    y: -80,
+                    x: 30,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 2
+                    }
+                }),
+                o.default.to(".aurora-wave", {
+                    backgroundPosition: "200% 50%",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: .5
+                    }
+                }),
+                o.default.to(".cosmic-dust", {
+                    rotation: 180,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 3
+                    }
+                })
+            }
+            , e);
+            return () => t.revert()
+        }
+        , []),
+        (0,
+        t.jsxs)("div", {
+            ref: e,
+            className: "fixed inset-0 z-0 overflow-hidden",
+            children: [(0,
+            t.jsx)("div", {
+                className: "nebula-layer-1 absolute inset-0 scale-110",
+                children: (0,
+                t.jsx)(a.default, {
+                    src: l.IMAGES.ca.cosmicBackground,
+                    alt: "",
+                    fill: !0,
+                    className: "object-cover",
+                    priority: !0,
+                    quality: 90
+                })
+            }), (0,
+            t.jsx)("div", {
+                className: "nebula-layer-2 absolute inset-0 scale-125 opacity-40",
+                children: (0,
+                t.jsx)(a.default, {
+                    src: l.IMAGES.ca.cosmicBackground,
+                    alt: "",
+                    fill: !0,
+                    className: "object-cover",
+                    style: {
+                        filter: "hue-rotate(30deg) saturate(1.3)"
+                    }
+                })
+            }), (0,
+            t.jsx)("div", {
+                className: "absolute inset-0 bg-black/30"
+            }), (0,
+            t.jsx)("div", {
+                className: "aurora-wave absolute inset-0 opacity-30",
+                style: {
+                    background: `linear-gradient(
+            45deg,
+            transparent 0%,
+            rgba(236, 72, 153, 0.1) 20%,
+            transparent 40%,
+            rgba(139, 92, 246, 0.15) 60%,
+            transparent 80%,
+            rgba(6, 182, 212, 0.1) 100%
+          )`,
+                    backgroundSize: "400% 400%"
+                }
+            }), (0,
+            t.jsx)("div", {
+                className: "cosmic-dust absolute top-1/2 left-1/2 h-[200vmax] w-[200vmax] -translate-x-1/2 -translate-y-1/2 opacity-10",
+                style: {
+                    background: `conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            ${s.COLORS_RGBA.PINK_30} 30deg,
+            transparent 60deg,
+            ${s.COLORS_RGBA.PURPLE_30} 120deg,
+            transparent 150deg,
+            ${s.COLORS_RGBA.CYAN_30} 210deg,
+            transparent 240deg,
+            ${s.COLORS_RGBA.PINK_30} 300deg,
+            transparent 330deg,
+            transparent 360deg
+          )`
+                }
+            }), (0,
+            t.jsx)("div", {
+                className: "absolute inset-0",
+                style: {
+                    background: `
+            radial-gradient(ellipse 100% 60% at 50% 0%, rgba(88, 28, 135, 0.4) 0%, transparent 60%),
+            radial-gradient(ellipse 80% 50% at 80% 100%, rgba(236, 72, 153, 0.25) 0%, transparent 50%),
+            linear-gradient(180deg, rgba(10, 6, 18, 0.5) 0%, transparent 20%, transparent 80%, rgba(10, 6, 18, 0.7) 100%)
+          `
+                }
+            }), (0,
+            t.jsx)("div", {
+                className: "absolute inset-0 opacity-[0.06]",
+                style: {
+                    backgroundImage: `
+            linear-gradient(rgba(139, 92, 246, 0.8) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(139, 92, 246, 0.8) 1px, transparent 1px)
+          `,
+                    backgroundSize: "100px 100px",
+                    transform: "perspective(500px) rotateX(60deg)",
+                    transformOrigin: "center top",
+                    maskImage: "linear-gradient(to bottom, black 0%, transparent 60%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 60%)"
+                }
+            }), (0,
+            t.jsx)("div", {
+                className: "pointer-events-none absolute inset-0 opacity-[0.03]",
+                style: {
+                    backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")"
+                }
+            })]
+        })
+    }
+    ], 552493)
+}
+, 203884, 706821, e => {
+    "use strict";
+    e.i(799303),
+    e.i(552493);
+    var t = e.i(951301)
+      , r = e.i(527962)
+      , n = e.i(613526)
+      , o = e.i(657591)
+      , i = e.i(430990)
+      , s = e.i(732919)
+      , a = e.i(543340)
+      , l = e.i(475191)
+      , u = e.i(272371);
+    s.default.registerPlugin(a.ScrollTrigger);
+    let c = 0;
+    function d() {
+        let e = (0,
+        r.useRef)(null)
+          , {scene: n} = (0,
+        i.useGLTF)(l.ASTRONAUT_MODEL_PATH)
+          , s = n.clone();
+        return (0,
+        o.useFrame)(t => {
+            if (e.current) {
+                let r = t.clock.elapsedTime
+                  , n = l.ASTRONAUT_CONFIG.startX + c * (l.ASTRONAUT_CONFIG.endX - l.ASTRONAUT_CONFIG.startX);
+                e.current.position.x = n,
+                e.current.rotation.y = l.ASTRONAUT_CONFIG.initialRotationY + c * l.ASTRONAUT_CONFIG.rotationMultiplierY,
+                e.current.rotation.x = l.ASTRONAUT_CONFIG.initialRotationX + c * l.ASTRONAUT_CONFIG.rotationMultiplierX,
+                e.current.position.y = l.ASTRONAUT_CONFIG.positionY + Math.sin(r * l.ASTRONAUT_CONFIG.floatSpeed) * l.ASTRONAUT_CONFIG.floatAmplitude
+            }
+        }
+        ),
+        (0,
+        t.jsx)("group", {
+            ref: e,
+            position: [l.ASTRONAUT_CONFIG.startX, l.ASTRONAUT_CONFIG.positionY, 0],
+            children: (0,
+            t.jsx)("primitive", {
+                object: s,
+                scale: l.ASTRONAUT_CONFIG.scale
+            })
+        })
+    }
+    i.useGLTF.preload(l.ASTRONAUT_MODEL_PATH);
+    let f = (0,
+    r.memo)(function() {
+        let e = (0,
+        r.useRef)(null)
+          , [o,i] = (0,
+        r.useState)(!1);
+        return ((0,
+        r.useEffect)( () => {
+            i(!0)
+        }
+        , []),
+        (0,
+        r.useEffect)( () => {
+            if (!o)
+                return;
+            let e = a.ScrollTrigger.create({
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                onUpdate: e => {
+                    c = e.progress
+                }
+            });
+            return () => {
+                e.kill()
+            }
+        }
+        , [o]),
+        o) ? (0,
+        t.jsx)("div", {
+            ref: e,
+            className: "pointer-events-none fixed inset-0 z-[2]",
+            style: {
+                opacity: .7
+            },
+            children: (0,
+            t.jsxs)(n.Canvas, {
+                camera: {
+                    position: [0, l.ASTRONAUT_CONFIG.cameraY, l.ASTRONAUT_CONFIG.cameraZ],
+                    fov: l.ASTRONAUT_CONFIG.fov
+                },
+                style: {
+                    background: "transparent"
+                },
+                gl: {
+                    antialias: !0,
+                    alpha: !0,
+                    powerPreference: "high-performance"
+                },
+                children: [(0,
+                t.jsx)("ambientLight", {
+                    intensity: l.ASTRONAUT_CONFIG.ambientIntensity
+                }), (0,
+                t.jsx)("directionalLight", {
+                    position: [5, 5, 5],
+                    intensity: l.ASTRONAUT_CONFIG.mainLightIntensity,
+                    color: "#ffffff"
+                }), (0,
+                t.jsx)("directionalLight", {
+                    position: [-5, 0, -5],
+                    intensity: l.ASTRONAUT_CONFIG.rimLightIntensity,
+                    color: u.COLORS.PURPLE
+                }), (0,
+                t.jsx)("pointLight", {
+                    position: [0, -3, 2],
+                    intensity: .5,
+                    color: u.COLORS.PINK,
+                    distance: 10
+                }), (0,
+                t.jsx)("pointLight", {
+                    position: [3, 2, -2],
+                    intensity: .4,
+                    color: u.COLORS.CYAN,
+                    distance: 10
+                }), (0,
+                t.jsx)(r.Suspense, {
+                    fallback: null,
+                    children: (0,
+                    t.jsx)(d, {})
+                })]
+            })
+        }) : null
+    });
+    e.s(["Astronaut3D", 0, f], 706821),
+    e.s([], 203884)
+}
+, 622183, 239134, 734023, 469811, e => {
+    "use strict";
+    var t = e.i(527962);
+    let r = t.useLayoutEffect;
+    function n(e=768) {
+        let[o,i] = (0,
+        t.useState)(!1);
+        return r( () => {
+            let t = () => i(window.innerWidth < e);
+            return t(),
+            window.addEventListener("resize", t),
+            () => window.removeEventListener("resize", t)
+        }
+        , [e]),
+        o
+    }
+    function o() {
+        let e = window.scrollY
+          , t = window.innerHeight
+          , r = document.documentElement.scrollHeight
+          , n = r - t;
+        return {
+            scrollY: e,
+            viewportHeight: t,
+            documentHeight: r,
+            progress: n > 0 ? e / n : 0
+        }
+    }
+    function i(e, t, r) {
+        let n = window.scrollY
+          , o = window.innerHeight
+          , i = document.documentElement.scrollHeight
+          , s = window.innerWidth < 640;
+        return n > o * e && n < i - o * (s ? r : t)
+    }
+    e.s(["useIsMobile", 0, n], 239134),
+    e.s(["useScrollPosition", 0, function(e) {
+        let {showAfterPercent: r=.85, hideBeforeBottomPercent: n=1.5, hideBeforeBottomPercentMobile: s=.5, progressThreshold: a=.005} = e || {}
+          , [l,u] = (0,
+        t.useState)(o)
+          , [c,d] = (0,
+        t.useState)( () => i(r, n, s))
+          , f = (0,
+        t.useRef)(l.progress)
+          , p = (0,
+        t.useRef)(c);
+        return (0,
+        t.useEffect)( () => {
+            let e = i(r, n, s);
+            e !== p.current && (p.current = e,
+            d(e))
+        }
+        , [r, n, s]),
+        (0,
+        t.useEffect)( () => {
+            let e = () => {
+                let e = window.scrollY
+                  , t = window.innerHeight
+                  , o = document.documentElement.scrollHeight
+                  , i = o - t
+                  , l = i > 0 ? e / i : 0
+                  , c = window.innerWidth < 640 ? s : n
+                  , h = t * r
+                  , g = o - t * c
+                  , m = e > h && e < g
+                  , b = Math.abs(l - f.current) >= a
+                  , y = m !== p.current;
+                (b || y) && (f.current = l,
+                p.current = m,
+                u({
+                    scrollY: e,
+                    viewportHeight: t,
+                    documentHeight: o,
+                    progress: l
+                }),
+                d(m))
+            }
+            ;
+            return window.addEventListener("scroll", e, {
+                passive: !0
+            }),
+            window.addEventListener("resize", e, {
+                passive: !0
+            }),
+            () => {
+                window.removeEventListener("scroll", e),
+                window.removeEventListener("resize", e)
+            }
+        }
+        , [r, n, s, a]),
+        {
+            ...l,
+            visible: c
+        }
+    }
+    ], 734023);
+    let s = "(prefers-reduced-motion: reduce)";
+    e.s(["useAnimationPolicy", 0, function() {
+        let e = n(768)
+          , r = function() {
+            let[e,r] = (0,
+            t.useState)( () => window.matchMedia(s).matches);
+            return (0,
+            t.useEffect)( () => {
+                let e = window.matchMedia(s);
+                r(e.matches);
+                let t = e => {
+                    r(e.matches)
+                }
+                ;
+                return e.addEventListener("change", t),
+                () => e.removeEventListener("change", t)
+            }
+            , []),
+            e
+        }()
+          , [o,i] = (0,
+        t.useState)(!1);
+        return (0,
+        t.useEffect)( () => {
+            i(!0)
+        }
+        , []),
+        (0,
+        t.useMemo)( () => ({
+            shouldAnimate: o && !e && !r,
+            isMobile: e,
+            prefersReducedMotion: r
+        }), [o, e, r])
+    }
+    ], 469811),
+    e.s([], 622183)
+}
+, 323762, e => {
+    "use strict";
+    var t = e.i(527962);
+    let r = (...e) => e.filter( (e, t, r) => !!e && "" !== e.trim() && r.indexOf(e) === t).join(" ").trim()
+      , n = {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        "stroke-width": 2,
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round"
+    }
+      , o = (0,
+    t.createContext)({})
+      , i = (0,
+    t.forwardRef)( ({color: e, size: i, width: s, height: a, strokeWidth: l, absoluteStrokeWidth: u, nonScalingStroke: c, className: d="", children: f, iconNode: p=[], icon: h={
+        node: p,
+        aliases: [],
+        size: 24
+    }, ...g}, m) => {
+        let {size: b=24, strokeWidth: y=2, absoluteStrokeWidth: v=!1, nonScalingStroke: S=!1, color: _="currentColor", className: x=""} = (0,
+        t.useContext)(o) ?? {}
+          , w = !!f || (e => {
+            for (let t in e)
+                if (t.startsWith("aria-") || "role" === t || "title" === t)
+                    return !0;
+            return !1
+        }
+        )(g)
+          , [N,j,R=[]] = function(e, t={}) {
+            return function(e, t={}) {
+                let o = t.attributeNames ?? {}
+                  , i = e => o[e] ?? e
+                  , s = e.size ?? e.width ?? n.width
+                  , a = e.size ?? e.height ?? n.height
+                  , l = e.aliases?.filter(e => "string" == typeof e && "" !== e.trim()).map(e => `lucide-${e}`) ?? []
+                  , u = [...e.name ? [`lucide-${e.name}`] : [], ...l]
+                  , c = t.className?.split(" ").filter(Boolean) ?? []
+                  , d = !1 === t.includeDefaultClasses ? r(...c) : r("lucide", ...u, ...c)
+                  , f = t.absoluteStrokeWidth ? Number(t.strokeWidth ?? n["stroke-width"]) * Number(e.size ?? e.width ?? n.width) / Number(t.size ?? t.width ?? n.width) : t.strokeWidth ?? n["stroke-width"];
+                return ["svg", {
+                    ...Object.entries(n).reduce( (e, [t,r]) => (e[i(t)] = r,
+                    e), {}),
+                    ..."color" in t && t.color && {
+                        [i("stroke")]: t.color
+                    },
+                    ..."size" in t && null != t.size && {
+                        [i("width")]: t.size,
+                        [i("height")]: t.size
+                    },
+                    ..."width" in t && null != t.width && {
+                        [i("width")]: t.width
+                    },
+                    ..."height" in t && null != t.height && {
+                        [i("height")]: t.height
+                    },
+                    [i("stroke-width")]: f,
+                    ...d && {
+                        [i("class")]: d
+                    },
+                    [i("viewBox")]: `0 0 ${s} ${a}`,
+                    ...!1 === t.hasA11yProp ? {
+                        [i("aria-hidden")]: "true"
+                    } : {},
+                    ..."attributes" in t && t.attributes
+                }, e.node.map(e => {
+                    let[r,n,o] = e
+                      , s = t.nonScalingStroke ? {
+                        [i("vector-effect")]: "non-scaling-stroke",
+                        ...n
+                    } : n;
+                    return o ? [r, s, o] : [r, s]
+                }
+                )]
+            }(e, {
+                ...t,
+                attributeNames: {
+                    ...t.attributeNames,
+                    class: "className",
+                    "stroke-width": "strokeWidth",
+                    "stroke-linecap": "strokeLinecap",
+                    "stroke-linejoin": "strokeLinejoin",
+                    "vector-effect": "vectorEffect"
+                }
+            })
+        }(h, {
+            color: e ?? _,
+            width: s ?? i ?? b,
+            height: a ?? i ?? b,
+            strokeWidth: l ?? y,
+            absoluteStrokeWidth: u ?? v,
+            nonScalingStroke: c ?? S,
+            className: r(x, d),
+            hasA11yProp: w,
+            attributes: g
+        });
+        return (0,
+        t.createElement)(N, {
+            ref: m,
+            ...j
+        }, [...R.map( ([e,r]) => (0,
+        t.createElement)(e, r)), ...Array.isArray(f) ? f : [f]])
+    }
+    );
+    e.s(["default", 0, function(e, r=[], n=[]) {
+        let o, s = "string" == typeof e ? function(e, t, r=[]) {
+            if (null == t)
+                throw Error("[lucide]: iconNode is required when icon name is used");
+            return {
+                name: e?.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase(),
+                size: 24,
+                node: t,
+                ...r.length > 0 ? {
+                    aliases: r
+                } : {}
+            }
+        }(e, r, n) : e, a = (0,
+        t.forwardRef)( ({className: e, ...r}, n) => (0,
+        t.createElement)(i, {
+            ref: n,
+            icon: s,
+            className: e,
+            ...r
+        }));
+        return s.name && (a.displayName = (o = (e => {
+            let t = ""
+              , r = !1;
+            for (let n of e) {
+                if ("-" === n || "_" === n || n <= " ") {
+                    r = t.length > 0;
+                    continue
+                }
+                0 === t.length ? t += n.toLowerCase() : t += r ? n.toUpperCase() : n,
+                r = !1
+            }
+            return t
+        }
+        )(s.name)).charAt(0).toUpperCase() + o.slice(1)),
+        a
+    }
+    ], 323762)
+}
+, 240420, e => {
+    "use strict";
+    var t = e.i(323762);
+    let r = {
+        name: "mail",
+        size: 24,
+        node: [["path", {
+            d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7",
+            key: "132q7q"
+        }], ["rect", {
+            x: "2",
+            y: "4",
+            width: "20",
+            height: "16",
+            rx: "2",
+            key: "izxlao"
+        }]]
+    };
+    r.node;
+    let n = (0,
+    t.default)(r);
+    e.s(["Mail", 0, n], 240420)
+}
+, 188493, (e, t, r) => {
+    "use strict";
+    e.i(78990),
+    Object.defineProperty(r, "__esModule", {
+        value: !0
+    });
+    var n = {
+        default: function() {
+            return b
+        },
+        useLinkStatus: function() {
+            return v
+        }
+    };
+    for (var o in n)
+        Object.defineProperty(r, o, {
+            enumerable: !0,
+            get: n[o]
+        });
+    let i = e.r(56421)
+      , s = e.r(951301)
+      , a = i._(e.r(527962))
+      , l = e.r(274913)
+      , u = e.r(998567)
+      , c = e.r(886653)
+      , d = e.r(818714)
+      , f = e.r(707423)
+      , p = e.r(495081)
+      , h = e.r(157423)
+      , g = e.r(277298)
+      , m = e.r(906623);
+    function b(t) {
+        var r;
+        let n, o, i, [b,v] = (0,
+        a.useOptimistic)(h.IDLE_LINK_STATUS), S = (0,
+        a.useRef)(null), {href: _, as: x, children: w, prefetch: N=null, passHref: j, replace: R, shallow: O, scroll: C, onClick: T, onMouseEnter: A, onTouchStart: k, legacyBehavior: E=!1, onNavigate: P, transitionTypes: L, ref: I, unstable_dynamicOnHover: F, ...z} = t;
+        n = w,
+        E && ("string" == typeof n || "number" == typeof n) && (n = (0,
+        s.jsx)("a", {
+            children: n
+        }));
+        let U = a.default.useContext(u.AppRouterContext)
+          , M = !1 !== N
+          , G = !1 === N ? "none" : !0 === N ? "full" : "auto"
+          , $ = "none" !== G ? "auto" === G ? m.FetchStrategy.PPR : m.FetchStrategy.Full : m.FetchStrategy.PPR
+          , B = "string" == typeof (r = x || _) ? r : (0,
+        l.formatUrl)(r);
+        if (E) {
+            if (n?.$$typeof === Symbol.for("react.lazy"))
+                throw Object.defineProperty(Error("`<Link legacyBehavior>` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's `<a>` tag."), "__NEXT_ERROR_CODE", {
+                    value: "E863",
+                    enumerable: !1,
+                    configurable: !0
+                });
+            o = a.default.Children.only(n)
+        }
+        let W = E ? o && "object" == typeof o && o.ref : I, D, K = a.default.useCallback(e => (null !== U && (S.current = (0,
+        h.mountLinkInstance)(e, B, U, $, M, v, D)),
+        () => {
+            S.current && ((0,
+            h.unmountLinkForCurrentNavigation)(S.current),
+            S.current = null),
+            (0,
+            h.unmountPrefetchableInstance)(e)
+        }
+        ), [M, B, U, $, v, D]), Y = {
+            ref: (0,
+            c.useMergedRef)(K, W),
+            onClick(t) {
+                E || "function" != typeof T || T(t),
+                E && o.props && "function" == typeof o.props.onClick && o.props.onClick(t),
+                !U || t.defaultPrevented || function(t, r, n, o, i, s, l, u="none") {
+                    if ("u" > typeof window) {
+                        let c, {nodeName: d} = t.currentTarget;
+                        if ("A" === d.toUpperCase() && ((c = t.currentTarget.getAttribute("target")) && "_self" !== c || t.metaKey || t.ctrlKey || t.shiftKey || t.altKey || t.nativeEvent && 2 === t.nativeEvent.which) || t.currentTarget.hasAttribute("download"))
+                            return;
+                        if (!(0,
+                        g.isLocalURL)(r)) {
+                            o && (t.preventDefault(),
+                            location.replace(r));
+                            return
+                        }
+                        if (t.preventDefault(),
+                        s) {
+                            let e = !1;
+                            if (s({
+                                preventDefault: () => {
+                                    e = !0
+                                }
+                            }),
+                            e)
+                                return
+                        }
+                        let {dispatchNavigateAction: f} = e.r(517214);
+                        a.default.startTransition( () => {
+                            f(r, o ? "replace" : "push", !1 === i ? p.ScrollBehavior.NoScroll : p.ScrollBehavior.Default, n.current, l, u)
+                        }
+                        )
+                    }
+                }(t, B, S, R, C, P, L, G)
+            },
+            onMouseEnter(e) {
+                E || "function" != typeof A || A(e),
+                E && o.props && "function" == typeof o.props.onMouseEnter && o.props.onMouseEnter(e),
+                U && M && (0,
+                h.onNavigationIntent)(e.currentTarget, !0 === F)
+            },
+            onTouchStart: function(e) {
+                E || "function" != typeof k || k(e),
+                E && o.props && "function" == typeof o.props.onTouchStart && o.props.onTouchStart(e),
+                U && M && (0,
+                h.onNavigationIntent)(e.currentTarget, !0 === F)
+            }
+        };
+        return (0,
+        d.isAbsoluteUrl)(B) ? Y.href = B : E && !j && ("a" !== o.type || "href" in o.props) || (Y.href = (0,
+        f.addBasePath)(B)),
+        i = E ? a.default.cloneElement(o, Y) : (0,
+        s.jsx)("a", {
+            ...z,
+            ...Y,
+            children: n
+        }),
+        (0,
+        s.jsx)(y.Provider, {
+            value: b,
+            children: i
+        })
+    }
+    let y = (0,
+    a.createContext)(h.IDLE_LINK_STATUS)
+      , v = () => (0,
+    a.useContext)(y);
+    ("function" == typeof r.default || "object" == typeof r.default && null !== r.default) && void 0 === r.default.__esModule && (Object.defineProperty(r.default, "__esModule", {
+        value: !0
+    }),
+    Object.assign(r.default, r),
+    t.exports = r.default)
+}
+, 886653, (e, t, r) => {
+    "use strict";
+    Object.defineProperty(r, "__esModule", {
+        value: !0
+    }),
+    Object.defineProperty(r, "useMergedRef", {
+        enumerable: !0,
+        get: function() {
+            return o
+        }
+    });
+    let n = e.r(527962);
+    function o(e, t) {
+        let r = (0,
+        n.useRef)(null)
+          , o = (0,
+        n.useRef)(null);
+        return (0,
+        n.useCallback)(n => {
+            if (null === n) {
+                let e = r.current;
+                e && (r.current = null,
+                e());
+                let t = o.current;
+                t && (o.current = null,
+                t())
+            } else
+                e && (r.current = i(e, n)),
+                t && (o.current = i(t, n))
+        }
+        , [e, t])
+    }
+    function i(e, t) {
+        if ("function" != typeof e)
+            return e.current = t,
+            () => {
+                e.current = null
+            }
+            ;
+        {
+            let r = e(t);
+            return "function" == typeof r ? r : () => e(null)
+        }
+    }
+    ("function" == typeof r.default || "object" == typeof r.default && null !== r.default) && void 0 === r.default.__esModule && (Object.defineProperty(r.default, "__esModule", {
+        value: !0
+    }),
+    Object.assign(r.default, r),
+    t.exports = r.default)
+}
+, 291855, (e, t, r) => {}
+, 277298, (e, t, r) => {
+    "use strict";
+    Object.defineProperty(r, "__esModule", {
+        value: !0
+    }),
+    Object.defineProperty(r, "isLocalURL", {
+        enumerable: !0,
+        get: function() {
+            return i
+        }
+    });
+    let n = e.r(818714)
+      , o = e.r(738239);
+    function i(e) {
+        if (!(0,
+        n.isAbsoluteUrl)(e))
+            return !0;
+        try {
+            let t = (0,
+            n.getLocationOrigin)()
+              , r = new URL(e,t);
+            return r.origin === t && (0,
+            o.hasBasePath)(r.pathname)
+        } catch (e) {
+            return !1
+        }
+    }
+}
+, 393239, (e, t, r) => {
+    "use strict";
+    Object.defineProperty(r, "__esModule", {
+        value: !0
+    });
+    var n = {
+        assign: function() {
+            return l
+        },
+        searchParamsToUrlQuery: function() {
+            return i
+        },
+        urlQueryToSearchParams: function() {
+            return a
+        }
+    };
+    for (var o in n)
+        Object.defineProperty(r, o, {
+            enumerable: !0,
+            get: n[o]
+        });
+    function i(e) {
+        let t = {};
+        for (let[r,n] of e.entries()) {
+            let e = t[r];
+            void 0 === e ? t[r] = n : Array.isArray(e) ? e.push(n) : t[r] = [e, n]
+        }
+        return t
+    }
+    function s(e) {
+        return "string" == typeof e ? e : ("number" != typeof e || isNaN(e)) && "boolean" != typeof e ? "" : String(e)
+    }
+    function a(e) {
+        let t = new URLSearchParams;
+        for (let[r,n] of Object.entries(e))
+            if (Array.isArray(n))
+                for (let e of n)
+                    t.append(r, s(e));
+            else
+                t.set(r, s(n));
+        return t
+    }
+    function l(e, ...t) {
+        for (let r of t) {
+            for (let t of r.keys())
+                e.delete(t);
+            for (let[t,n] of r.entries())
+                e.append(t, n)
+        }
+        return e
+    }
+}
+, 274913, (e, t, r) => {
+    "use strict";
+    e.i(78990),
+    Object.defineProperty(r, "__esModule", {
+        value: !0
+    });
+    var n = {
+        formatUrl: function() {
+            return a
+        },
+        formatWithValidation: function() {
+            return u
+        },
+        urlObjectKeys: function() {
+            return l
+        }
+    };
+    for (var o in n)
+        Object.defineProperty(r, o, {
+            enumerable: !0,
+            get: n[o]
+        });
+    let i = e.r(56421)._(e.r(393239))
+      , s = /https?|ftp|gopher|file/;
+    function a(e) {
+        let {auth: t, hostname: r} = e
+          , n = e.protocol || ""
+          , o = e.pathname || ""
+          , a = e.hash || ""
+          , l = e.query || ""
+          , u = !1;
+        t = t ? encodeURIComponent(t).replace(/%3A/i, ":") + "@" : "",
+        e.host ? u = t + e.host : r && (u = t + (~r.indexOf(":") ? `[${r}]` : r),
+        e.port && (u += ":" + e.port)),
+        l && "object" == typeof l && (l = String(i.urlQueryToSearchParams(l)));
+        let c = e.search || l && `?${l}` || "";
+        return n && !n.endsWith(":") && (n += ":"),
+        e.slashes || (!n || s.test(n)) && !1 !== u ? (u = "//" + (u || ""),
+        o && "/" !== o[0] && (o = "/" + o)) : u || (u = ""),
+        a && "#" !== a[0] && (a = "#" + a),
+        c && "?" !== c[0] && (c = "?" + c),
+        o = o.replace(/[?#]/g, encodeURIComponent),
+        c = c.replace("#", "%23"),
+        `${n}${u}${o}${c}${a}`
+    }
+    let l = ["auth", "hash", "host", "hostname", "href", "path", "pathname", "port", "protocol", "query", "search", "slashes"];
+    function u(e) {
+        return a(e)
+    }
+}
+, 818714, (e, t, r) => {
+    "use strict";
+    e.i(78990),
+    Object.defineProperty(r, "__esModule", {
+        value: !0
+    });
+    var n = {
+        DecodeError: function() {
+            return b
+        },
+        MiddlewareNotFoundError: function() {
+            return _
+        },
+        MissingStaticPage: function() {
+            return S
+        },
+        NormalizeError: function() {
+            return y
+        },
+        PageNotFoundError: function() {
+            return v
+        },
+        SP: function() {
+            return g
+        },
+        ST: function() {
+            return m
+        },
+        WEB_VITALS: function() {
+            return i
+        },
+        execOnce: function() {
+            return s
+        },
+        getDisplayName: function() {
+            return d
+        },
+        getLocationOrigin: function() {
+            return u
+        },
+        getURL: function() {
+            return c
+        },
+        isAbsoluteUrl: function() {
+            return l
+        },
+        isResSent: function() {
+            return f
+        },
+        loadGetInitialProps: function() {
+            return h
+        },
+        normalizeRepeatedSlashes: function() {
+            return p
+        },
+        stringifyError: function() {
+            return x
+        }
+    };
+    for (var o in n)
+        Object.defineProperty(r, o, {
+            enumerable: !0,
+            get: n[o]
+        });
+    let i = ["CLS", "FCP", "FID", "INP", "LCP", "TTFB"];
+    function s(e) {
+        let t, r = !1;
+        return (...n) => (r || (r = !0,
+        t = e(...n)),
+        t)
+    }
+    let a = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/
+      , l = e => {
+        let t = e.charCodeAt(0);
+        return !!(t >= 65 && t <= 90 || t >= 97 && t <= 122) && a.test(e)
+    }
+    ;
+    function u() {
+        let {protocol: e, hostname: t, port: r} = window.location;
+        return `${e}//${t}${r ? ":" + r : ""}`
+    }
+    function c() {
+        let {href: e} = window.location
+          , t = u();
+        return e.substring(t.length)
+    }
+    function d(e) {
+        return "string" == typeof e ? e : e.displayName || e.name || "Unknown"
+    }
+    function f(e) {
+        return e.finished || e.headersSent
+    }
+    function p(e) {
+        let t = e.split("?");
+        return t[0].replace(/\\/g, "/").replace(/\/\/+/g, "/") + (t[1] ? `?${t.slice(1).join("?")}` : "")
+    }
+    async function h(e, t) {
+        let r = t.res || t.ctx && t.ctx.res;
+        if (!e.getInitialProps)
+            return t.ctx && t.Component ? {
+                pageProps: await h(t.Component, t.ctx)
+            } : {};
+        let n = await e.getInitialProps(t);
+        if (r && f(r))
+            return n;
+        if (!n)
+            throw Object.defineProperty(Error(`"${d(e)}.getInitialProps()" should resolve to an object. But found "${n}" instead.`), "__NEXT_ERROR_CODE", {
+                value: "E1025",
+                enumerable: !1,
+                configurable: !0
+            });
+        return n
+    }
+    let g = "u" > typeof performance
+      , m = g && ["mark", "measure", "getEntriesByName"].every(e => "function" == typeof performance[e]);
+    class b extends Error {
+    }
+    class y extends Error {
+    }
+    class v extends Error {
+        constructor(e) {
+            super(),
+            this.code = "ENOENT",
+            this.name = "PageNotFoundError",
+            this.message = `Cannot find module for page: ${e}`
+        }
+    }
+    class S extends Error {
+        constructor(e, t) {
+            super(),
+            this.message = `Failed to load static file for page: ${e} ${t}`
+        }
+    }
+    class _ extends Error {
+        constructor() {
+            super(),
+            this.code = "ENOENT",
+            this.message = "Cannot find the middleware module"
+        }
+    }
+    function x(e) {
+        return JSON.stringify({
+            message: e.message,
+            stack: e.stack
+        })
+    }
+}
+, 817302, (e, t, r) => {
+    var n = e.i(78990);
+    e.r(291855);
+    var o = e.r(527962)
+      , i = o && "object" == typeof o && "default" in o ? o : {
+        default: o
+    }
+      , s = void 0 !== n.default && n.default.env && !0
+      , a = function(e) {
+        return "[object String]" === Object.prototype.toString.call(e)
+    }
+      , l = function() {
+        function e(e) {
+            var t = void 0 === e ? {} : e
+              , r = t.name
+              , n = void 0 === r ? "stylesheet" : r
+              , o = t.optimizeForSpeed
+              , i = void 0 === o ? s : o;
+            u(a(n), "`name` must be a string"),
+            this._name = n,
+            this._deletedRulePlaceholder = "#" + n + "-deleted-rule____{}",
+            u("boolean" == typeof i, "`optimizeForSpeed` must be a boolean"),
+            this._optimizeForSpeed = i,
+            this._serverSheet = void 0,
+            this._tags = [],
+            this._injected = !1,
+            this._rulesCount = 0;
+            var l = "u" > typeof window && document.querySelector('meta[property="csp-nonce"]');
+            this._nonce = l ? l.getAttribute("content") : null
+        }
+        var t, r = e.prototype;
+        return r.setOptimizeForSpeed = function(e) {
+            u("boolean" == typeof e, "`setOptimizeForSpeed` accepts a boolean"),
+            u(0 === this._rulesCount, "optimizeForSpeed cannot be when rules have already been inserted"),
+            this.flush(),
+            this._optimizeForSpeed = e,
+            this.inject()
+        }
+        ,
+        r.isOptimizeForSpeed = function() {
+            return this._optimizeForSpeed
+        }
+        ,
+        r.inject = function() {
+            var e = this;
+            if (u(!this._injected, "sheet already injected"),
+            this._injected = !0,
+            "u" > typeof window && this._optimizeForSpeed) {
+                this._tags[0] = this.makeStyleTag(this._name),
+                this._optimizeForSpeed = "insertRule" in this.getSheet(),
+                this._optimizeForSpeed || (s || console.warn("StyleSheet: optimizeForSpeed mode not supported falling back to standard mode."),
+                this.flush(),
+                this._injected = !0);
+                return
+            }
+            this._serverSheet = {
+                cssRules: [],
+                insertRule: function(t, r) {
+                    return "number" == typeof r ? e._serverSheet.cssRules[r] = {
+                        cssText: t
+                    } : e._serverSheet.cssRules.push({
+                        cssText: t
+                    }),
+                    r
+                },
+                deleteRule: function(t) {
+                    e._serverSheet.cssRules[t] = null
+                }
+            }
+        }
+        ,
+        r.getSheetForTag = function(e) {
+            if (e.sheet)
+                return e.sheet;
+            for (var t = 0; t < document.styleSheets.length; t++)
+                if (document.styleSheets[t].ownerNode === e)
+                    return document.styleSheets[t]
+        }
+        ,
+        r.getSheet = function() {
+            return this.getSheetForTag(this._tags[this._tags.length - 1])
+        }
+        ,
+        r.insertRule = function(e, t) {
+            if (u(a(e), "`insertRule` accepts only strings"),
+            "u" < typeof window)
+                return "number" != typeof t && (t = this._serverSheet.cssRules.length),
+                this._serverSheet.insertRule(e, t),
+                this._rulesCount++;
+            if (this._optimizeForSpeed) {
+                var r = this.getSheet();
+                "number" != typeof t && (t = r.cssRules.length);
+                try {
+                    r.insertRule(e, t)
+                } catch (t) {
+                    return s || console.warn("StyleSheet: illegal rule: \n\n" + e + "\n\nSee https://stackoverflow.com/q/20007992 for more info"),
+                    -1
+                }
+            } else {
+                var n = this._tags[t];
+                this._tags.push(this.makeStyleTag(this._name, e, n))
+            }
+            return this._rulesCount++
+        }
+        ,
+        r.replaceRule = function(e, t) {
+            if (this._optimizeForSpeed || "u" < typeof window) {
+                var r = "u" > typeof window ? this.getSheet() : this._serverSheet;
+                if (t.trim() || (t = this._deletedRulePlaceholder),
+                !r.cssRules[e])
+                    return e;
+                r.deleteRule(e);
+                try {
+                    r.insertRule(t, e)
+                } catch (n) {
+                    s || console.warn("StyleSheet: illegal rule: \n\n" + t + "\n\nSee https://stackoverflow.com/q/20007992 for more info"),
+                    r.insertRule(this._deletedRulePlaceholder, e)
+                }
+            } else {
+                var n = this._tags[e];
+                u(n, "old rule at index `" + e + "` not found"),
+                n.textContent = t
+            }
+            return e
+        }
+        ,
+        r.deleteRule = function(e) {
+            if ("u" < typeof window)
+                return void this._serverSheet.deleteRule(e);
+            if (this._optimizeForSpeed)
+                this.replaceRule(e, "");
+            else {
+                var t = this._tags[e];
+                u(t, "rule at index `" + e + "` not found"),
+                t.parentNode.removeChild(t),
+                this._tags[e] = null
+            }
+        }
+        ,
+        r.flush = function() {
+            this._injected = !1,
+            this._rulesCount = 0,
+            "u" > typeof window ? (this._tags.forEach(function(e) {
+                return e && e.parentNode.removeChild(e)
+            }),
+            this._tags = []) : this._serverSheet.cssRules = []
+        }
+        ,
+        r.cssRules = function() {
+            var e = this;
+            return "u" < typeof window ? this._serverSheet.cssRules : this._tags.reduce(function(t, r) {
+                return r ? t = t.concat(Array.prototype.map.call(e.getSheetForTag(r).cssRules, function(t) {
+                    return t.cssText === e._deletedRulePlaceholder ? null : t
+                })) : t.push(null),
+                t
+            }, [])
+        }
+        ,
+        r.makeStyleTag = function(e, t, r) {
+            t && u(a(t), "makeStyleTag accepts only strings as second parameter");
+            var n = document.createElement("style");
+            this._nonce && n.setAttribute("nonce", this._nonce),
+            n.type = "text/css",
+            n.setAttribute("data-" + e, ""),
+            t && n.appendChild(document.createTextNode(t));
+            var o = document.head || document.getElementsByTagName("head")[0];
+            return r ? o.insertBefore(n, r) : o.appendChild(n),
+            n
+        }
+        ,
+        t = [{
+            key: "length",
+            get: function() {
+                return this._rulesCount
+            }
+        }],
+        function(e, t) {
+            for (var r = 0; r < t.length; r++) {
+                var n = t[r];
+                n.enumerable = n.enumerable || !1,
+                n.configurable = !0,
+                "value" in n && (n.writable = !0),
+                Object.defineProperty(e, n.key, n)
+            }
+        }(e.prototype, t),
+        e
+    }();
+    function u(e, t) {
+        if (!e)
+            throw Error("StyleSheet: " + t + ".")
+    }
+    var c = function(e) {
+        for (var t = 5381, r = e.length; r; )
+            t = 33 * t ^ e.charCodeAt(--r);
+        return t >>> 0
+    }
+      , d = {};
+    function f(e, t) {
+        if (!t)
+            return "jsx-" + e;
+        var r = String(t)
+          , n = e + r;
+        return d[n] || (d[n] = "jsx-" + c(e + "-" + r)),
+        d[n]
+    }
+    function p(e, t) {
+        "u" < typeof window && (t = t.replace(/\/style/gi, "\\/style"));
+        var r = e + t;
+        return d[r] || (d[r] = t.replace(/__jsx-style-dynamic-selector/g, e)),
+        d[r]
+    }
+    var h = function() {
+        function e(e) {
+            var t = void 0 === e ? {} : e
+              , r = t.styleSheet
+              , n = void 0 === r ? null : r
+              , o = t.optimizeForSpeed
+              , i = void 0 !== o && o;
+            this._sheet = n || new l({
+                name: "styled-jsx",
+                optimizeForSpeed: i
+            }),
+            this._sheet.inject(),
+            n && "boolean" == typeof i && (this._sheet.setOptimizeForSpeed(i),
+            this._optimizeForSpeed = this._sheet.isOptimizeForSpeed()),
+            this._fromServer = void 0,
+            this._indices = {},
+            this._instancesCounts = {}
+        }
+        var t = e.prototype;
+        return t.add = function(e) {
+            var t = this;
+            void 0 === this._optimizeForSpeed && (this._optimizeForSpeed = Array.isArray(e.children),
+            this._sheet.setOptimizeForSpeed(this._optimizeForSpeed),
+            this._optimizeForSpeed = this._sheet.isOptimizeForSpeed()),
+            "u" > typeof window && !this._fromServer && (this._fromServer = this.selectFromServer(),
+            this._instancesCounts = Object.keys(this._fromServer).reduce(function(e, t) {
+                return e[t] = 0,
+                e
+            }, {}));
+            var r = this.getIdAndRules(e)
+              , n = r.styleId
+              , o = r.rules;
+            if (n in this._instancesCounts) {
+                this._instancesCounts[n] += 1;
+                return
+            }
+            var i = o.map(function(e) {
+                return t._sheet.insertRule(e)
+            }).filter(function(e) {
+                return -1 !== e
+            });
+            this._indices[n] = i,
+            this._instancesCounts[n] = 1
+        }
+        ,
+        t.remove = function(e) {
+            var t = this
+              , r = this.getIdAndRules(e).styleId;
+            if (function(e, t) {
+                if (!e)
+                    throw Error("StyleSheetRegistry: " + t + ".")
+            }(r in this._instancesCounts, "styleId: `" + r + "` not found"),
+            this._instancesCounts[r] -= 1,
+            this._instancesCounts[r] < 1) {
+                var n = this._fromServer && this._fromServer[r];
+                n ? (n.parentNode.removeChild(n),
+                delete this._fromServer[r]) : (this._indices[r].forEach(function(e) {
+                    return t._sheet.deleteRule(e)
+                }),
+                delete this._indices[r]),
+                delete this._instancesCounts[r]
+            }
+        }
+        ,
+        t.update = function(e, t) {
+            this.add(t),
+            this.remove(e)
+        }
+        ,
+        t.flush = function() {
+            this._sheet.flush(),
+            this._sheet.inject(),
+            this._fromServer = void 0,
+            this._indices = {},
+            this._instancesCounts = {}
+        }
+        ,
+        t.cssRules = function() {
+            var e = this
+              , t = this._fromServer ? Object.keys(this._fromServer).map(function(t) {
+                return [t, e._fromServer[t]]
+            }) : []
+              , r = this._sheet.cssRules();
+            return t.concat(Object.keys(this._indices).map(function(t) {
+                return [t, e._indices[t].map(function(e) {
+                    return r[e].cssText
+                }).join(e._optimizeForSpeed ? "" : "\n")]
+            }).filter(function(e) {
+                return !!e[1]
+            }))
+        }
+        ,
+        t.styles = function(e) {
+            var t, r;
+            return t = this.cssRules(),
+            void 0 === (r = e) && (r = {}),
+            t.map(function(e) {
+                var t = e[0]
+                  , n = e[1];
+                return i.default.createElement("style", {
+                    id: "__" + t,
+                    key: "__" + t,
+                    nonce: r.nonce ? r.nonce : void 0,
+                    dangerouslySetInnerHTML: {
+                        __html: n
+                    }
+                })
+            })
+        }
+        ,
+        t.getIdAndRules = function(e) {
+            var t = e.children
+              , r = e.dynamic
+              , n = e.id;
+            if (r) {
+                var o = f(n, r);
+                return {
+                    styleId: o,
+                    rules: Array.isArray(t) ? t.map(function(e) {
+                        return p(o, e)
+                    }) : [p(o, t)]
+                }
+            }
+            return {
+                styleId: f(n),
+                rules: Array.isArray(t) ? t : [t]
+            }
+        }
+        ,
+        t.selectFromServer = function() {
+            return Array.prototype.slice.call(document.querySelectorAll('[id^="__jsx-"]')).reduce(function(e, t) {
+                return e[t.id.slice(2)] = t,
+                e
+            }, {})
+        }
+        ,
+        e
+    }()
+      , g = o.createContext(null);
+    function m() {
+        return new h
+    }
+    function b() {
+        return o.useContext(g)
+    }
+    g.displayName = "StyleSheetContext";
+    var y = i.default.useInsertionEffect || i.default.useLayoutEffect
+      , v = "u" > typeof window ? m() : void 0;
+    function S(e) {
+        var t = v || b();
+        return t && ("u" < typeof window ? t.add(e) : y(function() {
+            return t.add(e),
+            function() {
+                t.remove(e)
+            }
+        }, [e.id, String(e.dynamic)])),
+        null
+    }
+    S.dynamic = function(e) {
+        return e.map(function(e) {
+            return f(e[0], e[1])
+        }).join(" ")
+    }
+    ,
+    r.StyleRegistry = function(e) {
+        var t = e.registry
+          , r = e.children
+          , n = o.useContext(g)
+          , s = o.useState(function() {
+            return n || t || m()
+        })[0];
+        return i.default.createElement(g.Provider, {
+            value: s
+        }, r)
+    }
+    ,
+    r.createStyleRegistry = m,
+    r.style = S,
+    r.useStyleRegistry = b
+}
+, 171151, (e, t, r) => {
+    t.exports = e.r(817302).style
+}
+]);

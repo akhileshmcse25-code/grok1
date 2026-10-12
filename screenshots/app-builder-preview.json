@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Astronaut",
+      "hasCanvas": false,
+      "bodyTextLen": 129,
+      "bodyTextHash": "02b7c533a67ad78a17244b581b4d6e28e749085cc56c62cacc3f1ec88c1fe7b0",
+      "bodyTextPrefix": "SCROLL LINKED Astronaut Scroll down and the suit crosses the sky",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Astronaut",
+      "hasCanvas": false,
+      "bodyTextLen": 129,
+      "bodyTextHash": "02b7c533a67ad78a17244b581b4d6e28e749085cc56c62cacc3f1ec88c1fe7b0",
+      "bodyTextPrefix": "SCROLL LINKED Astronaut Scroll down and the suit crosses the sky",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
